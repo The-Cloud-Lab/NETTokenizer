@@ -6,10 +6,12 @@ NETTokenizer is a DPDK-based in-network tokenizer that provides low latency high
 ## Repository Structure
 ```
 NETTokenizer/
+├── cpuTokenizer/       # Documentation files
 ├── dpdk/               # DPDK application source files
-│   └── tokenizer.c    # Main tokenization implementation
-├── docs/              # Documentation files
-└── scripts/           # Utility scripts
+│   └── tokenizer.c     # Main tokenization implementation.
+├── test/               # PCAP files used to test the performance.
+└── vocab/              # Directory for different Vocabulary files.
+└──README.md 
 ```
 
 ## Prerequisites
@@ -105,9 +107,9 @@ SOFTWARE.
 
 
 ## Contact
-Sudarshan Mehta - smehta3@scu.edu
-Shaunak Galvankar - sgalvankar@scu.edu
-Sean Choi - sean.choi@scu.edu
+* Sudarshan Mehta - smehta3@scu.edu
+* Shaunak Galvankar - sgalvankar@scu.edu
+* Sean Choi - sean.choi@scu.edu
 
 
 
