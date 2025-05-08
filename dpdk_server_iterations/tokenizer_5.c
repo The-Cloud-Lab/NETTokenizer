@@ -89,7 +89,7 @@ void tokenize_text(const char *text, int *input_ids, int *attention_mask) {
         return;
     }
     size_t len = strlen(text);
-    input_ids[0] = 101; 
+    input_ids[0] = 101;  // [CLS] token
     attention_mask[0] = 1;
     int token_pos = 1;
     for (int i = 0; i < len && token_pos < MAX_SEQUENCE_LENGTH - 1; i++) {
@@ -105,7 +105,7 @@ void tokenize_text(const char *text, int *input_ids, int *attention_mask) {
         }
     }
     if (token_pos < MAX_SEQUENCE_LENGTH) {
-        input_ids[token_pos] = 102; 
+        input_ids[token_pos] = 102;  // [SEP] token
         attention_mask[token_pos] = 1;
     }
 }
@@ -273,4 +273,3 @@ int main(int argc, char **argv) {
     rte_eal_cleanup();
     return 0;
 }
-// Compile with: gcc -o tokenizer tokenizer.c -ljson-c -lrte_eal -lrte_ethdev -lrte_mbuf -lrte_hash -lrte_jhash
